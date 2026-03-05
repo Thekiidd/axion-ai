@@ -12,7 +12,7 @@ export function TechStackSection() {
             </p>
 
             <div className="relative">
-                {/* Gradient fades */}
+                {/* Degradados en los bordes para el efecto de desvanecimiento */}
                 <div className="absolute left-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-r from-[#05050A] to-transparent pointer-events-none" />
                 <div className="absolute right-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-l from-[#05050A] to-transparent pointer-events-none" />
 

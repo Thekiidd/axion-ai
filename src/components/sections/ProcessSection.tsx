@@ -13,7 +13,7 @@ export function ProcessSection() {
       </h2>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-0 relative">
-        {/* Connector line */}
+        {/* Línea conectora vertical entre pasos */}
         <div className="absolute top-7 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-[#C8FF00] to-[rgba(200,255,0,0.1)] hidden md:block" />
 
         {PROCESS_STEPS.map((step, i) => (
@@ -22,13 +22,12 @@ export function ProcessSection() {
             className="pt-20 px-5 pb-5 relative text-center reveal"
             style={{ transitionDelay: `${i * 0.1}s` }}
           >
-            {/* Dot */}
+            {/* Punto decorativo del paso */}
             <div
-              className={`absolute top-5 left-1/2 -translate-x-1/2 w-[18px] h-[18px] rounded-full border-2 border-[#C8FF00] z-10 ${
-                i === 0 ? "bg-[#C8FF00] shadow-[0_0_24px_rgba(200,255,0,0.4)]" : "bg-[#05050A]"
-              }`}
+              className={`absolute top-5 left-1/2 -translate-x-1/2 w-[18px] h-[18px] rounded-none border-2 border-[#C8FF00] z-10 ${i === 0 ? "bg-[#C8FF00] shadow-[0_0_24px_rgba(200,255,0,0.4)]" : "bg-[#05050A]"
+                }`}
             />
-            {/* Big num background */}
+            {/* Número grande de fondo decorativo */}
             <div className="font-display text-[64px] text-[rgba(200,255,0,0.06)] leading-none absolute top-12 left-1/2 -translate-x-1/2">
               {step.num}
             </div>
@@ -57,9 +56,8 @@ export function CasesSection() {
         {CASES.map((c, i) => (
           <div
             key={i}
-            className={`group bg-[#05050A] border border-white/[0.07] rounded-3xl p-10 relative overflow-hidden hover:border-[rgba(200,255,0,0.25)] hover:-translate-y-1.5 transition-all duration-300 reveal ${
-              c.big ? "row-span-2 flex flex-col justify-end" : ""
-            }`}
+            className={`group bg-[#05050A] border border-white/[0.07] rounded-none p-10 relative overflow-hidden hover:border-[rgba(200,255,0,0.25)] hover:-translate-y-1.5 transition-all duration-300 reveal ${c.big ? "row-span-2 flex flex-col justify-end" : ""
+              }`}
             style={{ transitionDelay: `${i * 0.1}s` }}
             data-cursor-hover
           >

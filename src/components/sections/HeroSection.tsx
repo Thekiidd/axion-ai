@@ -10,10 +10,10 @@ export function HeroSection() {
 
   return (
     <section className="min-h-screen flex flex-col justify-end px-12 pb-20 relative overflow-hidden">
-      {/* Canvas particles */}
+      {/* Canvas de partículas animadas — fondo */}
       <canvas ref={canvasRef} className="absolute inset-0 z-0" />
 
-      {/* Radial glows */}
+      {/* Destellos radiales de luz verde lima */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0" style={{
           background: "radial-gradient(ellipse 70% 60% at 80% 20%, rgba(200,255,0,0.07) 0%, transparent 60%)"
@@ -23,7 +23,7 @@ export function HeroSection() {
         }} />
       </div>
 
-      {/* Grid */}
+      {/* Cuadrícula de fondo sutil */}
       <div
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
@@ -33,18 +33,18 @@ export function HeroSection() {
         }}
       />
 
-      {/* Big BG text */}
+      {/* Texto de fondo enorme decorativo */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[48%] font-display text-[clamp(180px,26vw,380px)] text-white/[0.02] whitespace-nowrap pointer-events-none z-[1] tracking-[0.05em]">
         AXON
       </div>
 
-      {/* Badge */}
-      <div className="absolute top-[110px] right-12 z-10 animate-[fadeInRight_1s_0.8s_both] flex items-center gap-2 bg-[rgba(200,255,0,0.08)] border border-[rgba(200,255,0,0.2)] text-[#C8FF00] px-[18px] py-2 rounded-full text-[11px] font-bold tracking-[0.12em] uppercase">
-        <span className="w-[6px] h-[6px] rounded-full bg-[#C8FF00] animate-[blink_2s_infinite]" />
+      {/* Badge de disponibilidad */}
+      <div className="absolute top-[110px] right-12 z-10 animate-[fadeInRight_1s_0.8s_both] flex items-center gap-2 bg-[rgba(200,255,0,0.08)] border border-[rgba(200,255,0,0.2)] text-[#C8FF00] px-[18px] py-2 rounded-none text-[11px] font-bold tracking-[0.12em] uppercase">
+        <span className="w-[6px] h-[6px] rounded-none bg-[#C8FF00] animate-[blink_2s_infinite]" />
         ✦ Disponible ahora · LATAM
       </div>
 
-      {/* Content */}
+      {/* Contenido principal del hero */}
       <div className="relative z-[5]">
         <p className="text-xs font-semibold tracking-[0.15em] uppercase text-[#C8FF00] mb-6 flex items-center gap-3 animate-[fadeUp_0.8s_0.2s_both]">
           <span className="block w-8 h-px bg-[#C8FF00]" />
@@ -69,7 +69,7 @@ export function HeroSection() {
           <div className="flex flex-col items-end gap-4">
             <Link
               href="#contacto"
-              className="bg-[#C8FF00] text-[#05050A] px-10 py-4 rounded-full text-[15px] font-bold uppercase tracking-[0.08em] transition-all duration-200 hover:scale-[1.04] hover:-translate-y-0.5 hover:shadow-[0_8px_40px_rgba(200,255,0,0.4)]"
+              className="bg-[#C8FF00] text-[#05050A] px-10 py-4 rounded-none text-[15px] font-bold uppercase tracking-[0.08em] transition-all duration-200 hover:scale-[1.04] hover:-translate-y-0.5 hover:shadow-[0_8px_40px_rgba(200,255,0,0.4)]"
             >
               Cuéntanos tu proyecto →
             </Link>

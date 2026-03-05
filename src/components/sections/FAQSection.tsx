@@ -24,7 +24,7 @@ export function FAQSection() {
                         return (
                             <div
                                 key={i}
-                                className="reveal bg-[#05050A] rounded-2xl overflow-hidden border border-white/[0.04] hover:border-white/[0.1] transition-colors duration-200"
+                                className="reveal bg-[#05050A] rounded-none overflow-hidden border border-white/[0.04] hover:border-white/[0.1] transition-colors duration-200"
                             >
                                 <button
                                     onClick={() => setOpen(isOpen ? null : i)}

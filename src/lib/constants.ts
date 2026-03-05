@@ -26,7 +26,7 @@ export const SERVICES = [
     title: "Diseño y desarrollo web",
     description:
       "Sitios web profesionales hechos a la medida de tu negocio: landing pages, sitios corporativos, portafolios y blogs. Diseño moderno, rápido y optimizado para Google desde el día uno.",
-    price: "Desde $350 USD",
+    cta: "Cotización gratuita",
     tags: ["Diseño personalizado", "SEO on-page", "Mobile-first"],
   },
   {
@@ -35,16 +35,16 @@ export const SERVICES = [
     title: "Hosting y mantenimiento",
     description:
       "Alojamos tu web en servidores de alta disponibilidad con dominio incluido, certificado SSL, copias de seguridad automáticas y soporte técnico. Sin complicaciones técnicas de tu parte.",
-    price: "Desde $59 USD/mes",
+    cta: "Cotización gratuita",
     tags: ["Uptime 99.9%", "SSL incluido", "Backups diarios"],
   },
   {
     num: "03",
-    emoji: "�",
+    emoji: "🛒",
     title: "Tiendas online y e-commerce",
     description:
       "Tu tienda en internet con catálogo de productos, carrito de compras, pagos en línea (tarjeta, PayPal, transferencia) y gestión de pedidos. Lista para vender desde el primer día.",
-    price: "Desde $600 USD",
+    cta: "Cotización gratuita",
     tags: ["Pagos integrados", "Gestión de pedidos", "Entrega en 5–7 días"],
   },
   {
@@ -53,7 +53,7 @@ export const SERVICES = [
     title: "Soluciones a medida",
     description:
       "Cuando los templates no alcanzan. Desarrollamos sistemas personalizados: portales de clientes, sistemas de reservas, CRMs simples, intranets o cualquier herramienta interna que tu negocio necesite.",
-    price: "Cotización personalizada",
+    cta: "Cuéntanos tu proyecto",
     tags: ["100% a medida", "Documentación incluida", "Escalable"],
   },
   {
@@ -62,16 +62,16 @@ export const SERVICES = [
     title: "Implementación de IA",
     description:
       "Integramos inteligencia artificial en tus procesos: chatbots de atención al cliente, generación de contenido automático, análisis de datos y automatización de tareas repetitivas.",
-    price: "Desde $500 USD",
-    tags: ["ChatGPT / OpenAI", "WhatsApp + Web", "Setup en 3–4 días"],
+    cta: "Cotización gratuita",
+    tags: ["Gemini / OpenAI", "WhatsApp + Web", "Setup en 3–4 días"],
   },
   {
     num: "06",
-    emoji: "�",
+    emoji: "🎨",
     title: "Identidad digital y branding",
     description:
       "Logotipo, paleta de colores, tipografías y guía de estilo básica para que tu negocio tenga una imagen coherente en web y redes sociales. Base sólida para cualquier proyecto digital.",
-    price: "Desde $250 USD",
+    cta: "Cotización gratuita",
     tags: ["Logo vectorial", "Guía de marca", "Entrega en 3–5 días"],
   },
 ];
@@ -269,15 +269,15 @@ export const FAQ = [
 
 export const CHATBOT_RESPONSES: Record<string, string> = {
   web:
-    "Para desarrollo web trabajamos con:\n\n🌐 **Landing pages y sitios corporativos** — desde $350 USD\n🛒 **Tiendas online con pagos** — desde $600 USD\n📱 **Sitios con diseño personalizado** — en 3–7 días\n\nTodos incluyen hosting el primer mes y SEO básico. ¿Tienes en mente el tipo de sitio que necesitas?",
+    "Para desarrollo web trabajamos con:\n\n🌐 **Landing pages y sitios corporativos**\n🛒 **Tiendas online con pagos integrados**\n📱 **Sitios con diseño personalizado** — en 3–7 días\n\nTodos incluyen hosting el primer mes y SEO básico. ¿Me cuentas qué tipo de proyecto tienes en mente?",
   hosting:
-    "Ofrecemos planes de hosting y mantenimiento mensuales:\n\n� **Mantenimiento básico** — $59 USD/mes\n� **Crecimiento** — $129 USD/mes\n⚡ **Escala** (con IA incluida) — $299 USD/mes\n\nTodos incluyen dominio, SSL y backups automáticos. ¿Ya tienes sitio web o lo desarrollaríamos nosotros?",
+    "Ofrecemos hosting con mantenimiento mensual:\n\n🖥️ **Dominio + SSL + backups automáticos**\n🛠️ **Actualizaciones de contenido incluidas**\n💬 **Soporte técnico en español**\n\n¿Ya tienes sitio web o lo desarrollaríamos desde cero?",
   precio:
-    "Nuestros precios son fijos y sin sorpresas:\n\n🌐 Sitio web: desde **$350 USD**\n🛒 Tienda online: desde **$600 USD**\n🤖 Chatbot con IA: desde **$500 USD**\n⚙️ Solución a medida: cotización personalizada\n🖥️ Hosting mensual: desde **$59 USD/mes**\n\n¿Quieres empezar con alguno en específico?",
+    "Cada proyecto es diferente, por eso cotizamos de forma personalizada y gratuita 👇\n\n📋 Cuéntanos qué necesitas y te mandamos una propuesta con alcance, tiempo de entrega y precio fijo — sin letra chica.\n\n¿Te gustaría agendar una llamada de 30 min sin costo?",
   tiempo:
     "Nuestros tiempos de entrega por escrito:\n\n• Sitio de hasta 5 páginas: **3–5 días hábiles**\n• Tienda online: **5–7 días hábiles**\n• Chatbot / integración IA: **3–4 días hábiles**\n• Proyecto a medida: se define en propuesta\n\n¿Tienes alguna fecha límite?",
   ia:
-    "Implementamos IA en negocios de cualquier tamaño:\n\n🤖 **Chatbot de atención** — WhatsApp, Instagram, Web\n📝 **Generación de contenido** — posts, emails, descripciones\n⚙️ **Automatización de procesos** — flujos de trabajo sin código\n\nSetup desde $500 USD, entrega en 3–4 días. ¿Para qué área lo necesitas?",
+    "Implementamos IA en negocios de cualquier tamaño:\n\n🤖 **Chatbot de atención** — WhatsApp, Instagram, Web\n📝 **Generación de contenido** — posts, emails, descripciones\n⚙️ **Automatización de procesos** — flujos de trabajo sin código\n\n¿Para qué área lo necesitas? Te hacemos una cotización gratuita.",
   default:
     "Hola 👋 Somos AXON — desarrollamos sitios web, damos hosting y construimos soluciones digitales a medida.\n\n¿En qué te puedo ayudar?\n\n💬 Necesito un sitio web\n🖥️ Busco hosting para mi web actual\n🤖 Quiero integrar IA en mi negocio\n⚙️ Tengo un proyecto a medida",
 };

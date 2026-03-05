@@ -60,7 +60,10 @@ export function ChatbotDemo() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    // Solo hacer scroll si hay interacción (más del mensaje inicial) o si el bot está escribiendo
+    if (messages.length > 1 || typing) {
+      messagesEndRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
   }, [messages, typing]);
 
   const sendMessage = (text: string) => {
@@ -77,7 +80,7 @@ export function ChatbotDemo() {
 
   return (
     <section id="demo" className="px-12 py-[120px] grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-      {/* Left text */}
+      {/* Columna izquierda — texto descriptivo */}
       <div>
         <p className="text-xs font-bold tracking-[0.15em] uppercase text-[#C8FF00] mb-7 flex items-center gap-2.5 reveal">
           <span className="w-5 h-px bg-[#C8FF00]" />
@@ -98,16 +101,16 @@ export function ChatbotDemo() {
         </p>
       </div>
 
-      {/* Chatbot window */}
-      <div className="bg-[#0D0D18] border border-white/[0.07] rounded-3xl overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.5)] reveal">
-        {/* Topbar */}
+      {/* Ventana del chatbot interactivo */}
+      <div className="bg-[#0D0D18] border border-white/[0.07] rounded-none overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.5)] reveal">
+        {/* Barra superior del chat con avatar */}
         <div className="bg-white/[0.04] px-6 py-4 flex items-center gap-3 border-b border-white/[0.07]">
           <div className="flex gap-[6px]">
-            <div className="w-[10px] h-[10px] rounded-full bg-[#ff5f57]" />
-            <div className="w-[10px] h-[10px] rounded-full bg-[#febc2e]" />
-            <div className="w-[10px] h-[10px] rounded-full bg-[#28c840]" />
+            <div className="w-[10px] h-[10px] rounded-none bg-[#ff5f57]" />
+            <div className="w-[10px] h-[10px] rounded-none bg-[#febc2e]" />
+            <div className="w-[10px] h-[10px] rounded-none bg-[#28c840]" />
           </div>
-          <div className="w-8 h-8 rounded-full bg-[#C8FF00] flex items-center justify-center text-sm font-bold text-[#05050A] ml-2">
+          <div className="w-8 h-8 rounded-none bg-[#C8FF00] flex items-center justify-center text-sm font-bold text-[#05050A] ml-2">
             A
           </div>
           <div>
@@ -116,7 +119,7 @@ export function ChatbotDemo() {
           </div>
         </div>
 
-        {/* Messages */}
+        {/* Área de mensajes del chat */}
         <div className="p-6 min-h-[280px] max-h-[280px] overflow-y-auto flex flex-col gap-4">
           {messages.map((msg, i) => (
             <MessageBubble key={i} msg={msg} />
@@ -127,7 +130,7 @@ export function ChatbotDemo() {
                 {[0, 1, 2].map((i) => (
                   <span
                     key={i}
-                    className="w-[7px] h-[7px] rounded-full bg-[#6A6A82] animate-[dotBounce_1.2s_infinite]"
+                    className="w-[7px] h-[7px] rounded-none bg-[#6A6A82] animate-[dotBounce_1.2s_infinite]"
                     style={{ animationDelay: `${i * 0.2}s` }}
                   />
                 ))}
@@ -137,20 +140,20 @@ export function ChatbotDemo() {
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Suggestions */}
+        {/* Sugerencias rápidas de preguntas frecuentes */}
         <div className="flex flex-wrap gap-2 px-5 pb-4">
           {SUGGESTIONS.map((s) => (
             <button
               key={s}
               onClick={() => sendMessage(s)}
-              className="bg-[rgba(200,255,0,0.06)] border border-[rgba(200,255,0,0.15)] text-[#C8FF00] px-[14px] py-[7px] rounded-full text-xs hover:bg-[rgba(200,255,0,0.12)] transition-colors"
+              className="bg-[rgba(200,255,0,0.06)] border border-[rgba(200,255,0,0.15)] text-[#C8FF00] px-[14px] py-[7px] rounded-none text-xs hover:bg-[rgba(200,255,0,0.12)] transition-colors"
             >
               {s}
             </button>
           ))}
         </div>
 
-        {/* Input */}
+        {/* Campo de entrada del usuario */}
         <div className="px-5 pb-5 flex gap-3 items-center border-t border-white/[0.07] pt-4">
           <input
             type="text"
@@ -158,11 +161,11 @@ export function ChatbotDemo() {
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && sendMessage(input)}
             placeholder="Escribe tu pregunta..."
-            className="flex-1 bg-white/[0.04] border border-white/[0.07] rounded-full px-[18px] py-[10px] text-sm text-[#F0EEE8] placeholder-[#6A6A82] outline-none focus:border-[rgba(200,255,0,0.35)] transition-colors font-sans"
+            className="flex-1 bg-white/[0.04] border border-white/[0.07] rounded-none px-[18px] py-[10px] text-sm text-[#F0EEE8] placeholder-[#6A6A82] outline-none focus:border-[rgba(200,255,0,0.35)] transition-colors font-sans"
           />
           <button
             onClick={() => sendMessage(input)}
-            className="w-10 h-10 rounded-full bg-[#C8FF00] flex items-center justify-center text-[#05050A] font-bold hover:scale-110 hover:shadow-[0_0_20px_rgba(200,255,0,0.4)] transition-all"
+            className="w-10 h-10 rounded-none bg-[#C8FF00] flex items-center justify-center text-[#05050A] font-bold hover:scale-110 hover:shadow-[0_0_20px_rgba(200,255,0,0.4)] transition-all"
           >
             →
           </button>

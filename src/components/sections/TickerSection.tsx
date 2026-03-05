@@ -25,7 +25,7 @@ export function TickerSection() {
             className="font-display text-[18px] tracking-[0.1em] text-[#05050A] flex items-center gap-6"
           >
             {item}
-            <span className="w-2 h-2 rounded-full bg-[#05050A]/30" />
+            <span className="w-2 h-2 rounded-none bg-[#05050A]/30" />
           </span>
         ))}
       </div>

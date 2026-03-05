@@ -16,28 +16,33 @@ export function useCursor() {
 
     const onMove = (e: MouseEvent) => {
       mousePos.current = { x: e.clientX, y: e.clientY };
-      dot.style.left = `${e.clientX}px`;
-      dot.style.top = `${e.clientY}px`;
     };
 
     const animate = () => {
-      ringPos.current.x += (mousePos.current.x - ringPos.current.x) * 0.12;
-      ringPos.current.y += (mousePos.current.y - ringPos.current.y) * 0.12;
-      ring.style.left = `${ringPos.current.x}px`;
-      ring.style.top = `${ringPos.current.y}px`;
+      ringPos.current.x += (mousePos.current.x - ringPos.current.x) * 0.18; // más suave
+      ringPos.current.y += (mousePos.current.y - ringPos.current.y) * 0.18;
+
+      const dotW = parseFloat(dot.style.width || "10") / 2;
+      dot.style.transform = `translate3d(${mousePos.current.x - dotW}px, ${mousePos.current.y - dotW}px, 0)`;
+
+      const ringW = parseFloat(ring.style.width || "36") / 2;
+      ring.style.transform = `translate3d(${ringPos.current.x - ringW}px, ${ringPos.current.y - ringW}px, 0)`;
+
       rafRef.current = requestAnimationFrame(animate);
     };
 
     const onEnter = () => {
-      dot.style.transform = "translate(-50%,-50%) scale(2.5)";
       dot.style.background = "rgba(200,255,0,0.4)";
+      dot.style.width = "25px";
+      dot.style.height = "25px";
       ring.style.width = "60px";
       ring.style.height = "60px";
     };
 
     const onLeave = () => {
-      dot.style.transform = "translate(-50%,-50%) scale(1)";
       dot.style.background = "var(--lime)";
+      dot.style.width = "10px";
+      dot.style.height = "10px";
       ring.style.width = "36px";
       ring.style.height = "36px";
     };

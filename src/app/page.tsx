@@ -11,7 +11,6 @@ import { ProcessSection, CasesSection } from "@/components/sections/ProcessSecti
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { ChatbotDemo } from "@/components/sections/ChatbotDemo";
 import { FAQSection } from "@/components/sections/FAQSection";
-import { PricingSection } from "@/components/sections/PricingSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 
 
@@ -32,7 +31,6 @@ export default function Home() {
       <TestimonialsSection />
       <ChatbotDemo />
       <FAQSection />
-      <PricingSection />
       <ContactSection />
     </>
   );

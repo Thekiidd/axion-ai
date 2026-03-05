@@ -19,7 +19,7 @@ export function WhyUsSection() {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-[2px] bg-white/[0.07] rounded-3xl overflow-hidden reveal">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-[2px] bg-white/[0.07] rounded-none overflow-hidden reveal">
                 {WHY_US.map((item, i) => (
                     <div
                         key={i}

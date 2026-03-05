@@ -31,7 +31,7 @@ export function useParticles(canvasRef: React.RefObject<HTMLCanvasElement | null
     resize();
     window.addEventListener("resize", resize);
 
-    for (let i = 0; i < 60; i++) {
+    for (let i = 0; i < 40; i++) {
       particles.push({
         x: Math.random() * window.innerWidth,
         y: Math.random() * window.innerHeight,
@@ -63,11 +63,11 @@ export function useParticles(canvasRef: React.RefObject<HTMLCanvasElement | null
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 120) {
+          if (dist < 100) {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(200,255,0,${0.06 * (1 - dist / 120)})`;
+            ctx.strokeStyle = `rgba(200,255,0,${0.06 * (1 - dist / 100)})`;
             ctx.stroke();
           }
         }

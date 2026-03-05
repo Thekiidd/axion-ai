@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import { Cursor } from "@/components/ui/Cursor";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "AXON AI — Soluciones de Inteligencia Artificial para tu negocio",
@@ -32,6 +33,14 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-[#05050A] text-[#F0EEE8] font-sans antialiased">
+        <Toaster
+          theme="dark"
+          position="bottom-right"
+          toastOptions={{
+            className: "rounded-none border border-white/[0.07] bg-[#05050A] text-[#F0EEE8] font-sans",
+            style: { borderRadius: "0px" }
+          }}
+        />
         <Cursor />
         <Navbar />
         <main>{children}</main>

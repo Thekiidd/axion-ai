@@ -32,7 +32,7 @@ const DEMOS = [
 export function DemosSection() {
     return (
         <section id="demos" className="px-12 py-[120px] bg-[#0D0D18]">
-            {/* Header */}
+            {/* Encabezado de la sección */}
             <div className="flex justify-between items-end mb-16">
                 <div>
                     <p className="text-xs font-bold tracking-[0.15em] uppercase text-[#C8FF00] mb-7 flex items-center gap-2.5 reveal">
@@ -49,30 +49,30 @@ export function DemosSection() {
                 </p>
             </div>
 
-            {/* Cards */}
+            {/* Grid de tarjetas de demo */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {DEMOS.map((demo, i) => (
                     <div
                         key={demo.id}
-                        className="reveal group bg-[#05050A] border border-white/[0.07] rounded-3xl overflow-hidden hover:border-[rgba(200,255,0,0.25)] transition-all duration-300"
+                        className="reveal group bg-[#05050A] border border-white/[0.07] rounded-none overflow-hidden hover:border-[rgba(200,255,0,0.25)] transition-all duration-300"
                         style={{ transitionDelay: `${i * 0.1}s` }}
                     >
-                        {/* Top bar with preview feel */}
+                        {/* Barra superior simulando ventana de navegador */}
                         <div className="bg-white/[0.03] border-b border-white/[0.06] px-6 py-4 flex items-center justify-between">
                             <div className="flex items-center gap-2">
                                 <div className="flex gap-[5px]">
-                                    <span className="w-[9px] h-[9px] rounded-full bg-[#ff5f57]" />
-                                    <span className="w-[9px] h-[9px] rounded-full bg-[#febc2e]" />
-                                    <span className="w-[9px] h-[9px] rounded-full bg-[#28c840]" />
+                                    <span className="w-[9px] h-[9px] rounded-none bg-[#ff5f57]" />
+                                    <span className="w-[9px] h-[9px] rounded-none bg-[#febc2e]" />
+                                    <span className="w-[9px] h-[9px] rounded-none bg-[#28c840]" />
                                 </div>
                                 <span className="text-[11px] text-[#6A6A82] ml-3 font-mono">{demo.subdomain}</span>
                             </div>
-                            <span className="text-[10px] font-bold tracking-[0.12em] uppercase text-[#C8FF00] bg-[rgba(200,255,0,0.08)] border border-[rgba(200,255,0,0.2)] px-3 py-1 rounded-full">
+                            <span className="text-[10px] font-bold tracking-[0.12em] uppercase text-[#C8FF00] bg-[rgba(200,255,0,0.08)] border border-[rgba(200,255,0,0.2)] px-3 py-1 rounded-none">
                                 {demo.badge}
                             </span>
                         </div>
 
-                        {/* Content */}
+                        {/* Contenido de la tarjeta */}
                         <div className="px-9 py-10">
                             <span className="text-4xl mb-5 block">{demo.emoji}</span>
 
@@ -84,7 +84,7 @@ export function DemosSection() {
                                 {demo.description}
                             </p>
 
-                            {/* Use cases */}
+                            {/* Lista de casos de uso */}
                             <div className="mb-8">
                                 <p className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#6A6A82] mb-3">
                                     Qué puede hacer
@@ -99,24 +99,24 @@ export function DemosSection() {
                                 </ul>
                             </div>
 
-                            {/* Tags */}
+                            {/* Etiquetas de tecnología */}
                             <div className="flex flex-wrap gap-2 mb-9">
                                 {demo.tags.map((tag) => (
                                     <span
                                         key={tag}
-                                        className="text-[11px] text-[#6A6A82] border border-white/[0.07] rounded-full px-[10px] py-[3px]"
+                                        className="text-[11px] text-[#6A6A82] border border-white/[0.07] rounded-none px-[10px] py-[3px]"
                                     >
                                         {tag}
                                     </span>
                                 ))}
                             </div>
 
-                            {/* CTA */}
+                            {/* Botón de llamada a la acción */}
                             <Link
                                 href={demo.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-3 bg-[#C8FF00] text-[#05050A] px-7 py-3.5 rounded-full text-[13px] font-bold uppercase tracking-[0.07em] transition-all duration-200 hover:scale-[1.04] hover:shadow-[0_8px_32px_rgba(200,255,0,0.35)] hover:-translate-y-0.5"
+                                className="inline-flex items-center gap-3 bg-[#C8FF00] text-[#05050A] px-7 py-3.5 rounded-none text-[13px] font-bold uppercase tracking-[0.07em] transition-all duration-200 hover:scale-[1.04] hover:shadow-[0_8px_32px_rgba(200,255,0,0.35)] hover:-translate-y-0.5"
                             >
                                 Probar demo en vivo
                                 <span className="text-base">↗</span>
@@ -126,7 +126,7 @@ export function DemosSection() {
                 ))}
             </div>
 
-            {/* Bottom note */}
+            {/* Nota al pie con invitación a personalizar el demo */}
             <p className="text-center text-[13px] text-[#6A6A82] mt-12 reveal">
                 ¿Quieres un demo personalizado con el nombre y datos de tu negocio?{" "}
                 <Link href="#contacto" className="text-[#C8FF00] hover:underline">

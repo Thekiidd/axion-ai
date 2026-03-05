@@ -20,7 +20,7 @@ export function PricingSection() {
         {PRICING_PLANS.map((plan, i) => (
           <div
             key={plan.tier}
-            className={`rounded-3xl px-9 py-12 relative overflow-hidden hover:-translate-y-2 transition-transform duration-300 reveal border ${
+            className={`rounded-none px-9 py-12 relative overflow-hidden hover:-translate-y-2 transition-transform duration-300 reveal border ${
               plan.featured
                 ? "border-[#C8FF00] bg-gradient-to-br from-[rgba(200,255,0,0.06)] to-[#0D0D18]"
                 : "border-white/[0.07] bg-[#0D0D18]"
@@ -28,7 +28,7 @@ export function PricingSection() {
             style={{ transitionDelay: `${i * 0.1}s` }}
           >
             {plan.featured && (
-              <span className="absolute top-6 right-6 bg-[#C8FF00] text-[#05050A] text-[10px] font-extrabold tracking-[0.1em] uppercase px-3 py-1 rounded-full">
+              <span className="absolute top-6 right-6 bg-[#C8FF00] text-[#05050A] text-[10px] font-extrabold tracking-[0.1em] uppercase px-3 py-1 rounded-none">
                 Popular
               </span>
             )}
@@ -59,7 +59,7 @@ export function PricingSection() {
 
             <Link
               href="#contacto"
-              className={`block text-center py-[14px] rounded-full text-sm font-bold uppercase tracking-[0.07em] transition-all duration-300 ${
+              className={`block text-center py-[14px] rounded-none text-sm font-bold uppercase tracking-[0.07em] transition-all duration-300 ${
                 plan.featured
                   ? "bg-[#C8FF00] text-[#05050A] hover:shadow-[0_8px_32px_rgba(200,255,0,0.4)] hover:-translate-y-0.5"
                   : "border border-white/[0.07] text-[#F0EEE8] hover:border-[#C8FF00] hover:text-[#C8FF00]"

@@ -38,7 +38,7 @@ export function TestimonialsSection() {
                 {TESTIMONIALS.map((t, i) => (
                     <div
                         key={t.name}
-                        className="reveal bg-[#05050A] border border-white/[0.07] rounded-3xl px-9 py-10 hover:border-white/[0.14] transition-colors duration-300"
+                        className="reveal bg-[#05050A] border border-white/[0.07] rounded-none px-9 py-10 hover:border-white/[0.14] transition-colors duration-300"
                         style={{ transitionDelay: `${i * 0.1}s` }}
                     >
                         <StarRating count={t.stars} />
@@ -46,7 +46,7 @@ export function TestimonialsSection() {
                             &ldquo;{t.quote}&rdquo;
                         </p>
                         <div className="flex items-center gap-4 pt-6 border-t border-white/[0.06]">
-                            <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[rgba(200,255,0,0.3)] to-[rgba(200,255,0,0.05)] flex items-center justify-center text-[#C8FF00] text-[13px] font-bold flex-shrink-0">
+                            <div className="w-11 h-11 rounded-none bg-gradient-to-br from-[rgba(200,255,0,0.3)] to-[rgba(200,255,0,0.05)] flex items-center justify-center text-[#C8FF00] text-[13px] font-bold flex-shrink-0">
                                 {t.avatar}
                             </div>
                             <div>
