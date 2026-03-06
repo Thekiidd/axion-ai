@@ -12,7 +12,7 @@ export function Footer() {
   return (
     <footer className="px-12 py-10 border-t border-white/[0.07] flex flex-col md:flex-row justify-between items-center gap-6">
       <div className="font-display text-2xl tracking-widest">
-        AX<span className="text-[#C8FF00]">O</span>N
+        AX<span className="text-[#C8FF00]">I</span>ON INC
       </div>
 
       <div className="flex gap-7">

@@ -17,7 +17,7 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-12 py-5 flex items-center justify-between border-b border-white/[0.07] backdrop-blur-xl bg-[#05050A]/85">
       <Link href="/" className="font-display text-[28px] tracking-widest text-[#F0EEE8]">
-        AX<span className="text-[#C8FF00]">O</span>N
+        AX<span className="text-[#C8FF00]">I</span>ON INC
       </Link>
 
       <ul className="hidden md:flex gap-9 list-none">

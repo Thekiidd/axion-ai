@@ -214,7 +214,7 @@ export async function POST(req: NextRequest) {
           <td style="padding:0 36px 32px;">
             <div style="height:1px;background:rgba(255,255,255,0.07);margin-bottom:20px;"></div>
             <p style="margin:0;font-size:12px;color:#6A6A82;">
-              Enviado automáticamente desde el formulario de <strong style="color:#F0EEE8;">axon.ai</strong> · IP: ${ip}</p>
+              Enviado automáticamente desde el formulario de <strong style="color:#F0EEE8;">axion.inc</strong> · IP: ${ip}</p>
           </td>
         </tr>
       </table>
