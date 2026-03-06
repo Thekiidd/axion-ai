@@ -1,4 +1,6 @@
-import Link from "next/link";
+"use client";
+
+import { useState } from "react";
 
 const DEMOS = [
     {
@@ -29,9 +31,255 @@ const DEMOS = [
     },
 ];
 
+interface ComingSoonModalProps {
+    demo: (typeof DEMOS)[0] | null;
+    onClose: () => void;
+}
+
+function ComingSoonModal({ demo, onClose }: ComingSoonModalProps) {
+    if (!demo) return null;
+
+    return (
+        /* Backdrop */
+        <div
+            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            style={{ backgroundColor: "rgba(5, 5, 10, 0.85)", backdropFilter: "blur(8px)" }}
+            onClick={onClose}
+        >
+            {/* Modal panel */}
+            <div
+                className="relative w-full max-w-md"
+                style={{
+                    background: "linear-gradient(135deg, #0D0D18 0%, #05050A 100%)",
+                    border: "1px solid rgba(200,255,0,0.25)",
+                    boxShadow: "0 0 80px rgba(200,255,0,0.12), 0 32px 64px rgba(0,0,0,0.6)",
+                    animation: "modalIn 0.25s cubic-bezier(0.34,1.56,0.64,1) both",
+                }}
+                onClick={(e) => e.stopPropagation()}
+            >
+                {/* Top accent line */}
+                <div
+                    style={{
+                        height: "2px",
+                        background: "linear-gradient(90deg, transparent, #C8FF00, transparent)",
+                    }}
+                />
+
+                {/* Close button */}
+                <button
+                    onClick={onClose}
+                    aria-label="Cerrar"
+                    style={{
+                        position: "absolute",
+                        top: "16px",
+                        right: "16px",
+                        width: "32px",
+                        height: "32px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        background: "rgba(255,255,255,0.05)",
+                        border: "1px solid rgba(255,255,255,0.08)",
+                        color: "#6A6A82",
+                        fontSize: "18px",
+                        cursor: "pointer",
+                        lineHeight: 1,
+                        transition: "all 0.2s",
+                    }}
+                    onMouseEnter={(e) => {
+                        (e.currentTarget as HTMLButtonElement).style.color = "#C8FF00";
+                        (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(200,255,0,0.4)";
+                    }}
+                    onMouseLeave={(e) => {
+                        (e.currentTarget as HTMLButtonElement).style.color = "#6A6A82";
+                        (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.08)";
+                    }}
+                >
+                    ×
+                </button>
+
+                {/* Content */}
+                <div style={{ padding: "40px 36px 36px" }}>
+                    {/* Icon */}
+                    <div
+                        style={{
+                            width: "64px",
+                            height: "64px",
+                            background: "rgba(200,255,0,0.08)",
+                            border: "1px solid rgba(200,255,0,0.2)",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            fontSize: "28px",
+                            marginBottom: "24px",
+                        }}
+                    >
+                        🚧
+                    </div>
+
+                    {/* Badge */}
+                    <span
+                        style={{
+                            display: "inline-block",
+                            fontSize: "10px",
+                            fontWeight: 700,
+                            letterSpacing: "0.14em",
+                            textTransform: "uppercase",
+                            color: "#C8FF00",
+                            background: "rgba(200,255,0,0.08)",
+                            border: "1px solid rgba(200,255,0,0.2)",
+                            padding: "4px 10px",
+                            marginBottom: "16px",
+                        }}
+                    >
+                        Próximamente
+                    </span>
+
+                    <h3
+                        style={{
+                            fontFamily: "var(--font-display, inherit)",
+                            fontSize: "26px",
+                            fontWeight: 700,
+                            color: "#F0EEE8",
+                            letterSpacing: "0.02em",
+                            lineHeight: 1.15,
+                            marginBottom: "12px",
+                        }}
+                    >
+                        {demo.title}
+                    </h3>
+
+                    <p
+                        style={{
+                            fontSize: "14px",
+                            color: "#6A6A82",
+                            lineHeight: 1.7,
+                            marginBottom: "28px",
+                        }}
+                    >
+                        Este demo aún está en proceso de despliegue. Estamos trabajando para que puedas
+                        probarlo muy pronto. ¿Quieres que te avisemos cuando esté listo?
+                    </p>
+
+                    {/* Divider */}
+                    <div
+                        style={{
+                            height: "1px",
+                            background: "rgba(255,255,255,0.06)",
+                            marginBottom: "24px",
+                        }}
+                    />
+
+                    {/* Status indicator */}
+                    <div
+                        style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "10px",
+                            marginBottom: "28px",
+                        }}
+                    >
+                        <span
+                            style={{
+                                width: "8px",
+                                height: "8px",
+                                borderRadius: "50%",
+                                background: "#febc2e",
+                                boxShadow: "0 0 8px rgba(254,188,46,0.6)",
+                                animation: "pulse 2s ease-in-out infinite",
+                                flexShrink: 0,
+                            }}
+                        />
+                        <span style={{ fontSize: "12px", color: "rgba(240,238,232,0.5)", fontFamily: "monospace" }}>
+                            {demo.subdomain} — pendiente de despliegue
+                        </span>
+                    </div>
+
+                    {/* CTA buttons */}
+                    <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+                        <a
+                            href="#contacto"
+                            onClick={onClose}
+                            style={{
+                                display: "inline-flex",
+                                alignItems: "center",
+                                gap: "8px",
+                                background: "#C8FF00",
+                                color: "#05050A",
+                                padding: "12px 20px",
+                                fontSize: "12px",
+                                fontWeight: 700,
+                                letterSpacing: "0.07em",
+                                textTransform: "uppercase",
+                                textDecoration: "none",
+                                transition: "all 0.2s",
+                                flexShrink: 0,
+                            }}
+                            onMouseEnter={(e) => {
+                                (e.currentTarget as HTMLAnchorElement).style.boxShadow =
+                                    "0 8px 24px rgba(200,255,0,0.35)";
+                                (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-1px)";
+                            }}
+                            onMouseLeave={(e) => {
+                                (e.currentTarget as HTMLAnchorElement).style.boxShadow = "none";
+                                (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
+                            }}
+                        >
+                            Avisarme cuando esté listo →
+                        </a>
+                        <button
+                            onClick={onClose}
+                            style={{
+                                display: "inline-flex",
+                                alignItems: "center",
+                                background: "transparent",
+                                border: "1px solid rgba(255,255,255,0.1)",
+                                color: "#6A6A82",
+                                padding: "12px 20px",
+                                fontSize: "12px",
+                                fontWeight: 700,
+                                letterSpacing: "0.07em",
+                                textTransform: "uppercase",
+                                cursor: "pointer",
+                                transition: "all 0.2s",
+                            }}
+                            onMouseEnter={(e) => {
+                                (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(200,255,0,0.3)";
+                                (e.currentTarget as HTMLButtonElement).style.color = "#C8FF00";
+                            }}
+                            onMouseLeave={(e) => {
+                                (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.1)";
+                                (e.currentTarget as HTMLButtonElement).style.color = "#6A6A82";
+                            }}
+                        >
+                            Volver
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <style>{`
+                @keyframes modalIn {
+                    from { opacity: 0; transform: scale(0.92) translateY(16px); }
+                    to   { opacity: 1; transform: scale(1) translateY(0); }
+                }
+                @keyframes pulse {
+                    0%, 100% { opacity: 1; }
+                    50%       { opacity: 0.4; }
+                }
+            `}</style>
+        </div>
+    );
+}
+
 export function DemosSection() {
+    const [activeDemo, setActiveDemo] = useState<(typeof DEMOS)[0] | null>(null);
+
     return (
         <section id="demos" className="px-12 py-[120px] bg-[#0D0D18]">
+            {/* Modal de "Próximamente" */}
+            <ComingSoonModal demo={activeDemo} onClose={() => setActiveDemo(null)} />
+
             {/* Encabezado de la sección */}
             <div className="flex justify-between items-end mb-16">
                 <div>
@@ -111,16 +359,14 @@ export function DemosSection() {
                                 ))}
                             </div>
 
-                            {/* Botón de llamada a la acción */}
-                            <Link
-                                href={demo.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-3 bg-[#C8FF00] text-[#05050A] px-7 py-3.5 rounded-none text-[13px] font-bold uppercase tracking-[0.07em] transition-all duration-200 hover:scale-[1.04] hover:shadow-[0_8px_32px_rgba(200,255,0,0.35)] hover:-translate-y-0.5"
+                            {/* Botón de llamada a la acción — abre modal */}
+                            <button
+                                onClick={() => setActiveDemo(demo)}
+                                className="inline-flex items-center gap-3 bg-[#C8FF00] text-[#05050A] px-7 py-3.5 rounded-none text-[13px] font-bold uppercase tracking-[0.07em] transition-all duration-200 hover:scale-[1.04] hover:shadow-[0_8px_32px_rgba(200,255,0,0.35)] hover:-translate-y-0.5 cursor-pointer"
                             >
                                 Probar demo en vivo
                                 <span className="text-base">↗</span>
-                            </Link>
+                            </button>
                         </div>
                     </div>
                 ))}
@@ -129,9 +375,9 @@ export function DemosSection() {
             {/* Nota al pie con invitación a personalizar el demo */}
             <p className="text-center text-[13px] text-[#6A6A82] mt-12 reveal">
                 ¿Quieres un demo personalizado con el nombre y datos de tu negocio?{" "}
-                <Link href="#contacto" className="text-[#C8FF00] hover:underline">
+                <a href="#contacto" className="text-[#C8FF00] hover:underline">
                     Contáctanos →
-                </Link>
+                </a>
             </p>
         </section>
     );

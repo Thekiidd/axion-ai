@@ -3,8 +3,8 @@ export const SITE_CONFIG = {
   tagline: "Desarrollo web, hosting y soluciones a medida con IA.",
   description:
     "Diseñamos y desarrollamos sitios web profesionales, damos hosting y construimos soluciones digitales a medida para micro y pequeñas empresas. También implementamos inteligencia artificial cuando el proyecto lo requiere.",
-  phone: "+52 (614) 156-2983",
-  email: "hola@axon.ai",
+  phone: "+52 614 356 8323",
+  email: "lbatistabustillos@gmail.com",
   location: "Chihuahua, México · Servimos todo LATAM",
   social: {
     instagram: "https://instagram.com/axon.ai",
