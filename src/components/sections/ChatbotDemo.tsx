@@ -51,7 +51,7 @@ function MessageBubble({ msg }: { msg: Message }) {
 export function ChatbotDemo() {
   const [messages, setMessages] = useState<Message[]>([
     {
-      text: "¡Hola! 👋 Soy el asistente de **AXON**. Estoy aquí para resolver tus dudas sobre cómo podemos ayudar a tu negocio con IA. ¿Qué tipo de negocio tienes?",
+      text: "¡Hola! 👋 Soy el asistente de **Axion Inc**. Estoy aquí para resolver tus dudas sobre cómo podemos ayudar a tu negocio con IA. ¿Qué tipo de negocio tienes?",
       type: "bot",
     },
   ]);
@@ -89,7 +89,7 @@ export function ChatbotDemo() {
         <h2 className="font-display text-[clamp(48px,6vw,84px)] leading-[0.95] tracking-[0.02em] mb-6 reveal">
           Así se ve un<br />
           <span className="text-[#C8FF00]">chatbot</span><br />
-          de AXON
+          de Axion Inc
         </h2>
         <p className="text-[17px] text-[#6A6A82] leading-[1.75] font-light reveal">
           Esto es exactamente lo que instalaríamos en tu web o WhatsApp.{" "}
@@ -114,7 +114,7 @@ export function ChatbotDemo() {
             A
           </div>
           <div>
-            <div className="text-sm font-semibold">AXON Asistente</div>
+            <div className="text-sm font-semibold">Axion Inc Asistente</div>
             <div className="text-[11px] text-[#C8FF00]">● En línea</div>
           </div>
         </div>

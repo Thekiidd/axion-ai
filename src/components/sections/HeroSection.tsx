@@ -35,7 +35,7 @@ export function HeroSection() {
 
       {/* Texto de fondo enorme decorativo */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[48%] font-display text-[clamp(180px,26vw,380px)] text-white/[0.02] whitespace-nowrap pointer-events-none z-[1] tracking-[0.05em]">
-        AXON
+        AXION INC
       </div>
 
       {/* Badge de disponibilidad */}

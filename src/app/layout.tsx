@@ -6,12 +6,12 @@ import { Footer } from "@/components/layout/Footer";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
-  title: "AXON AI — Soluciones de Inteligencia Artificial para tu negocio",
+  title: "Axion Inc — Soluciones de Inteligencia Artificial para tu negocio",
   description:
     "Creamos webs, chatbots, encuestas inteligentes y automatizaciones para restaurantes, coaches, tiendas y clínicas. Entrega en 3–7 días.",
   keywords: "agencia IA, chatbot restaurante, web con IA, automatización LATAM, soluciones inteligencia artificial México",
   openGraph: {
-    title: "AXON AI",
+    title: "Axion Inc",
     description: "Soluciones de IA para tu negocio. Entrega en 3–7 días.",
     type: "website",
   },

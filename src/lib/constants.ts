@@ -1,5 +1,5 @@
 export const SITE_CONFIG = {
-  name: "AXON",
+  name: "Axion Inc",
   tagline: "Desarrollo web, hosting y soluciones a medida con IA.",
   description:
     "Diseñamos y desarrollamos sitios web profesionales, damos hosting y construimos soluciones digitales a medida para micro y pequeñas empresas. También implementamos inteligencia artificial cuando el proyecto lo requiere.",
@@ -7,8 +7,8 @@ export const SITE_CONFIG = {
   email: "lbatistabustillos@gmail.com",
   location: "Chihuahua, México · Servimos todo LATAM",
   social: {
-    instagram: "https://instagram.com/axon.ai",
-    linkedin: "https://linkedin.com/company/axon-ai",
+    instagram: "https://instagram.com/axion.inc",
+    linkedin: "https://linkedin.com/company/axion-inc",
   },
 };
 
@@ -279,5 +279,5 @@ export const CHATBOT_RESPONSES: Record<string, string> = {
   ia:
     "Implementamos IA en negocios de cualquier tamaño:\n\n🤖 **Chatbot de atención** — WhatsApp, Instagram, Web\n📝 **Generación de contenido** — posts, emails, descripciones\n⚙️ **Automatización de procesos** — flujos de trabajo sin código\n\n¿Para qué área lo necesitas? Te hacemos una cotización gratuita.",
   default:
-    "Hola 👋 Somos AXON — desarrollamos sitios web, damos hosting y construimos soluciones digitales a medida.\n\n¿En qué te puedo ayudar?\n\n💬 Necesito un sitio web\n🖥️ Busco hosting para mi web actual\n🤖 Quiero integrar IA en mi negocio\n⚙️ Tengo un proyecto a medida",
+    "Hola 👋 Somos Axion Inc — desarrollamos sitios web, damos hosting y construimos soluciones digitales a medida.\n\n¿En qué te puedo ayudar?\n\n💬 Necesito un sitio web\n🖥️ Busco hosting para mi web actual\n🤖 Quiero integrar IA en mi negocio\n⚙️ Tengo un proyecto a medida",
 };

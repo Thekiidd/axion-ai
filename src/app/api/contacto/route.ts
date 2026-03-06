@@ -149,7 +149,7 @@ export async function POST(req: NextRequest) {
         const safeMessage = escHtml(message);
 
         await resend.emails.send({
-            from: "AXON Contacto <onboarding@resend.dev>",
+            from: "Axion Inc Contacto <onboarding@resend.dev>",
             to: OWNER_EMAIL,
             replyTo: email,
             subject: `📬 Nuevo lead: ${name}${business ? ` · ${business}` : ""}`,
@@ -169,7 +169,7 @@ export async function POST(req: NextRequest) {
         <tr>
           <td style="padding:32px 36px 0;">
             <p style="margin:0 0 4px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#C8FF00;">
-              AXON · Formulario web</p>
+              Axion Inc · Formulario web</p>
             <h1 style="margin:0;font-size:24px;font-weight:700;color:#F0EEE8;line-height:1.2;">
               Nuevo mensaje de contacto</h1>
           </td>
